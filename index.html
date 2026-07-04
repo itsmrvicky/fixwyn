@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fixwyn — Strategic Agency for Restaurants</title>
+    <meta name="description" content="Fixwyn fixes operational gaps and scales digital marketing for restaurants. Based in Lahore, Pakistan." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
     <style>
         /* ========================================
-                   RESET & BASE 
+                   RESET & BASE
                 ======================================== */
         * {
             margin: 0;
@@ -38,15 +40,12 @@
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         a {
             text-decoration: none;
             color: inherit;
-        }
-
-        img {
-            max-width: 100%;
         }
 
         .container {
@@ -73,13 +72,11 @@
             gap: 12px;
             letter-spacing: 0.3px;
         }
-
         .btn-primary:hover {
             background: #ff8a3a;
             transform: translateY(-2px);
             box-shadow: 0 20px 40px rgba(249, 115, 22, 0.25);
         }
-
         .btn-outline {
             background: transparent;
             color: var(--white);
@@ -93,13 +90,11 @@
             align-items: center;
             gap: 12px;
         }
-
         .btn-outline:hover {
             border-color: var(--orange);
             color: var(--orange);
             background: rgba(249, 115, 22, 0.05);
         }
-
         .btn-white {
             background: var(--white);
             color: var(--black);
@@ -112,7 +107,6 @@
             align-items: center;
             gap: 12px;
         }
-
         .btn-white:hover {
             transform: translateY(-2px);
             box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
@@ -122,7 +116,7 @@
                    HEADER
                 ======================================== */
         header {
-            padding: 20px 0;
+            padding: 16px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             position: fixed;
             top: 0;
@@ -145,13 +139,11 @@
             font-weight: 900;
             letter-spacing: -1.5px;
         }
-
         .logo span {
             color: var(--orange);
         }
-
         .logo .tagline {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 400;
             color: var(--text-muted);
             letter-spacing: 2px;
@@ -167,13 +159,11 @@
             font-size: 0.9rem;
             font-weight: 500;
         }
-
         .nav-links a {
             color: var(--text-muted);
             transition: color 0.3s ease;
             position: relative;
         }
-
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -184,20 +174,78 @@
             background: var(--orange);
             transition: width 0.3s ease;
         }
-
         .nav-links a:hover {
             color: var(--white);
         }
-
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            transition: 0.3s ease;
+            border-radius: 4px;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+        .mobile-menu.open {
+            display: flex;
+        }
+        .mobile-menu a {
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+        .mobile-menu a:hover {
+            color: var(--orange);
+        }
+        .mobile-menu .btn-primary {
+            font-size: 1rem;
         }
 
         /* ========================================
                    HERO
                 ======================================== */
         .hero {
-            padding: 160px 0 100px;
+            padding: 150px 0 100px;
             display: grid;
             grid-template-columns: 1fr 0.9fr;
             gap: 80px;
@@ -220,7 +268,6 @@
             text-transform: uppercase;
             margin-bottom: 24px;
         }
-
         .hero-badge .dot {
             width: 8px;
             height: 8px;
@@ -228,7 +275,6 @@
             border-radius: 50%;
             animation: pulse-dot 2s infinite;
         }
-
         @keyframes pulse-dot {
             0%,
             100% {
@@ -247,12 +293,10 @@
             line-height: 1.05;
             letter-spacing: -2px;
         }
-
         .hero h1 .highlight {
             color: var(--orange);
             position: relative;
         }
-
         .hero h1 .highlight::after {
             content: '';
             position: absolute;
@@ -264,7 +308,6 @@
             border-radius: 4px;
             z-index: -1;
         }
-
         .hero p {
             font-size: 1.2rem;
             color: var(--text-muted);
@@ -272,13 +315,11 @@
             margin: 28px 0 40px;
             line-height: 1.8;
         }
-
         .hero-actions {
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
         }
-
         .hero-stats {
             display: flex;
             gap: 60px;
@@ -286,18 +327,15 @@
             padding-top: 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
-
         .hero-stats .stat h3 {
             font-size: 2.4rem;
             font-weight: 800;
             color: var(--white);
             letter-spacing: -1px;
         }
-
         .hero-stats .stat h3 span {
             color: var(--orange);
         }
-
         .hero-stats .stat p {
             font-size: 0.85rem;
             color: var(--text-muted);
@@ -306,11 +344,9 @@
             letter-spacing: 1px;
         }
 
-        /* Hero Right */
         .hero-visual {
             position: relative;
         }
-
         .hero-visual .card {
             background: var(--dark);
             border: 1px solid var(--gray);
@@ -319,7 +355,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero-visual .card::before {
             content: '';
             position: absolute;
@@ -330,7 +365,6 @@
             background: radial-gradient(circle, rgba(249, 115, 22, 0.06), transparent 70%);
             pointer-events: none;
         }
-
         .hero-visual .card .icon-wrap {
             width: 64px;
             height: 64px;
@@ -343,13 +377,11 @@
             color: var(--orange);
             margin-bottom: 20px;
         }
-
         .hero-visual .card h3 {
             font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 6px;
         }
-
         .hero-visual .card p {
             color: var(--text-muted);
             font-size: 0.95rem;
@@ -368,31 +400,61 @@
             gap: 14px;
             backdrop-filter: blur(12px);
         }
-
         .hero-visual .floating-badge i {
             color: var(--orange);
             font-size: 1.4rem;
         }
-
         .hero-visual .floating-badge .text {
             font-weight: 600;
             font-size: 0.9rem;
         }
-
         .hero-visual .floating-badge .sub {
             font-size: 0.75rem;
             color: var(--text-muted);
         }
 
         /* ========================================
-                   LOGO STRIP (Trust)
+                   FADE-IN ANIMATIONS (On Load / Scroll)
+                ======================================== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        .fade-up-d1 {
+            animation-delay: 0.1s;
+        }
+        .fade-up-d2 {
+            animation-delay: 0.2s;
+        }
+        .fade-up-d3 {
+            animation-delay: 0.3s;
+        }
+        .fade-up-d4 {
+            animation-delay: 0.4s;
+        }
+        .fade-up-d5 {
+            animation-delay: 0.5s;
+        }
+        .fade-up-d6 {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================================
+                   TRUST STRIP
                 ======================================== */
         .trust-strip {
             padding: 50px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
-
         .trust-strip p {
             text-align: center;
             font-size: 0.75rem;
@@ -401,7 +463,6 @@
             color: var(--text-muted);
             margin-bottom: 24px;
         }
-
         .trust-logos {
             display: flex;
             justify-content: center;
@@ -410,7 +471,6 @@
             flex-wrap: wrap;
             opacity: 0.4;
         }
-
         .trust-logos span {
             font-size: 1.1rem;
             font-weight: 600;
@@ -429,25 +489,21 @@
             font-weight: 600;
             margin-bottom: 12px;
         }
-
         .section-title {
             font-size: 3.2rem;
             font-weight: 800;
             line-height: 1.1;
             letter-spacing: -1.5px;
         }
-
         .section-title .highlight {
             color: var(--orange);
         }
-
         .section-desc {
             font-size: 1.15rem;
             color: var(--text-muted);
             max-width: 520px;
             margin-top: 16px;
         }
-
         .section-padding {
             padding: 100px 0;
         }
@@ -461,7 +517,6 @@
             gap: 30px;
             margin-top: 50px;
         }
-
         .service-card {
             background: var(--dark);
             border: 1px solid var(--gray);
@@ -470,13 +525,11 @@
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
         }
-
         .service-card:hover {
             border-color: var(--orange);
             transform: translateY(-6px);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
         }
-
         .service-card .number {
             font-size: 0.7rem;
             font-weight: 700;
@@ -485,26 +538,22 @@
             margin-bottom: 16px;
             display: block;
         }
-
         .service-card .icon {
             font-size: 2.2rem;
             color: var(--orange);
             margin-bottom: 16px;
             display: block;
         }
-
         .service-card h3 {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 8px;
         }
-
         .service-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.7;
         }
-
         .service-card .link {
             color: var(--orange);
             font-weight: 600;
@@ -515,13 +564,12 @@
             margin-top: 16px;
             transition: gap 0.3s ease;
         }
-
         .service-card .link:hover {
             gap: 14px;
         }
 
         /* ========================================
-                   ABOUT (Minimal)
+                   ABOUT
                 ======================================== */
         .about-grid {
             display: grid;
@@ -529,7 +577,6 @@
             gap: 80px;
             align-items: center;
         }
-
         .about-content .big-number {
             font-size: 6rem;
             font-weight: 900;
@@ -538,41 +585,35 @@
             opacity: 0.15;
             letter-spacing: -4px;
         }
-
         .about-content h2 {
             font-size: 2.8rem;
             font-weight: 800;
             line-height: 1.1;
             margin: 8px 0 20px;
         }
-
         .about-content p {
             color: var(--text-muted);
             font-size: 1.05rem;
             line-height: 1.8;
             margin-bottom: 16px;
         }
-
         .about-features {
             display: flex;
             flex-direction: column;
             gap: 12px;
             margin-top: 24px;
         }
-
         .about-features .feature {
             display: flex;
             align-items: center;
             gap: 14px;
             font-weight: 500;
         }
-
         .about-features .feature i {
             color: var(--orange);
             font-size: 1rem;
             width: 20px;
         }
-
         .about-visual {
             background: var(--dark);
             border: 1px solid var(--gray);
@@ -581,24 +622,20 @@
             text-align: center;
             position: relative;
         }
-
         .about-visual .big-icon {
             font-size: 5rem;
             color: var(--orange);
             opacity: 0.3;
             margin-bottom: 20px;
         }
-
         .about-visual h4 {
             font-size: 1.6rem;
             font-weight: 700;
         }
-
         .about-visual p {
             color: var(--text-muted);
             font-size: 0.95rem;
         }
-
         .about-visual .pill {
             display: inline-block;
             background: rgba(249, 115, 22, 0.1);
@@ -619,7 +656,6 @@
             gap: 30px;
             margin-top: 50px;
         }
-
         .process-step {
             text-align: center;
             padding: 30px 20px;
@@ -628,11 +664,9 @@
             border-radius: 20px;
             transition: all 0.3s ease;
         }
-
         .process-step:hover {
             border-color: var(--orange);
         }
-
         .process-step .step-num {
             width: 48px;
             height: 48px;
@@ -646,20 +680,18 @@
             color: var(--orange);
             margin: 0 auto 16px;
         }
-
         .process-step h4 {
             font-weight: 700;
             font-size: 1.05rem;
             margin-bottom: 6px;
         }
-
         .process-step p {
             color: var(--text-muted);
             font-size: 0.9rem;
         }
 
         /* ========================================
-                   PORTFOLIO / CASE STUDIES
+                   CASE STUDIES
                 ======================================== */
         .case-grid {
             display: grid;
@@ -667,7 +699,6 @@
             gap: 30px;
             margin-top: 50px;
         }
-
         .case-card {
             background: var(--dark);
             border: 1px solid var(--gray);
@@ -675,12 +706,10 @@
             padding: 36px 32px;
             transition: all 0.4s ease;
         }
-
         .case-card:hover {
             border-color: var(--orange);
             transform: translateY(-4px);
         }
-
         .case-card .tag {
             display: inline-block;
             background: rgba(249, 115, 22, 0.08);
@@ -693,18 +722,15 @@
             letter-spacing: 0.5px;
             margin-bottom: 12px;
         }
-
         .case-card h4 {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 6px;
         }
-
         .case-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
         }
-
         .case-card .result {
             margin-top: 14px;
             font-weight: 700;
@@ -721,41 +747,36 @@
             gap: 30px;
             margin-top: 50px;
         }
-
         .testimonial-card {
             background: var(--dark);
             border: 1px solid var(--gray);
             border-radius: 20px;
             padding: 32px 28px;
         }
-
         .testimonial-card .stars {
             color: var(--orange);
             font-size: 0.9rem;
             margin-bottom: 12px;
             letter-spacing: 2px;
         }
-
         .testimonial-card blockquote {
             font-size: 1rem;
             line-height: 1.7;
             color: var(--text);
             font-style: normal;
         }
-
         .testimonial-card .author {
             margin-top: 16px;
             font-weight: 700;
             font-size: 0.95rem;
         }
-
         .testimonial-card .role {
             color: var(--text-muted);
             font-size: 0.8rem;
         }
 
         /* ========================================
-                   CTA
+                   CTA SECTION
                 ======================================== */
         .cta-section {
             background: linear-gradient(135deg, var(--orange), var(--orange-dark));
@@ -765,7 +786,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .cta-section::before {
             content: '';
             position: absolute;
@@ -776,7 +796,6 @@
             background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent 70%);
             pointer-events: none;
         }
-
         .cta-section h2 {
             font-size: 3rem;
             font-weight: 800;
@@ -784,7 +803,6 @@
             letter-spacing: -1.5px;
             position: relative;
         }
-
         .cta-section p {
             color: rgba(0, 0, 0, 0.7);
             font-size: 1.15rem;
@@ -792,13 +810,11 @@
             margin: 12px auto 32px;
             position: relative;
         }
-
         .cta-section .btn-white {
             background: var(--black);
             color: var(--white);
             position: relative;
         }
-
         .cta-section .btn-white:hover {
             background: #1a1a1a;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -813,50 +829,46 @@
             gap: 60px;
             margin-top: 50px;
         }
-
         .contact-info h3 {
             font-size: 2rem;
             font-weight: 800;
             margin-bottom: 12px;
         }
-
         .contact-info p {
             color: var(--text-muted);
             font-size: 1.05rem;
             max-width: 400px;
         }
-
         .contact-details {
             margin-top: 32px;
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
-
         .contact-details .item {
             display: flex;
             align-items: center;
             gap: 16px;
         }
-
         .contact-details .item i {
             width: 20px;
             color: var(--orange);
             font-size: 1.1rem;
         }
-
         .contact-details .item a {
             color: var(--white);
             font-weight: 500;
             border-bottom: 1px solid transparent;
             transition: border-color 0.3s ease;
         }
-
         .contact-details .item a:hover {
             border-color: var(--orange);
             color: var(--orange);
         }
 
+        /* ========================================
+                   CONTACT FORM (Netlify Working)
+                ======================================== */
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -870,22 +882,58 @@
             font-size: 0.95rem;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
-
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
             border-color: var(--orange);
             box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.06);
         }
-
         .contact-form textarea {
             height: 140px;
             resize: vertical;
         }
-
         .contact-form .btn-primary {
             width: 100%;
             justify-content: center;
+        }
+        .form-success {
+            display: none;
+            background: rgba(249, 115, 22, 0.1);
+            border: 1px solid var(--orange);
+            border-radius: 12px;
+            padding: 16px;
+            color: var(--orange);
+            text-align: center;
+            margin-top: 12px;
+            font-weight: 600;
+        }
+
+        /* ========================================
+                   FLOATING WHATSAPP BUTTON
+                ======================================== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: #25D366;
+            color: #fff;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 50px rgba(37, 211, 102, 0.4);
+            color: #fff;
         }
 
         /* ========================================
@@ -896,14 +944,12 @@
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             margin-top: 60px;
         }
-
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 50px;
             margin-bottom: 40px;
         }
-
         .footer-col h4 {
             font-size: 0.75rem;
             text-transform: uppercase;
@@ -912,13 +958,11 @@
             margin-bottom: 16px;
             font-weight: 600;
         }
-
         .footer-col p {
             color: var(--text-muted);
             font-size: 0.95rem;
             max-width: 300px;
         }
-
         .footer-col a {
             display: block;
             color: var(--text-muted);
@@ -926,11 +970,9 @@
             padding: 4px 0;
             transition: color 0.3s ease;
         }
-
         .footer-col a:hover {
             color: var(--white);
         }
-
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             padding-top: 24px;
@@ -940,22 +982,18 @@
             font-size: 0.85rem;
             color: var(--text-muted);
         }
-
         .footer-bottom span {
             color: var(--orange);
         }
-
         .footer-socials {
             display: flex;
             gap: 16px;
         }
-
         .footer-socials a {
             color: var(--text-muted);
             transition: color 0.3s ease;
             font-size: 1.1rem;
         }
-
         .footer-socials a:hover {
             color: var(--white);
         }
@@ -969,37 +1007,29 @@
                 gap: 50px;
                 padding: 120px 0 60px;
             }
-
             .hero h1 {
                 font-size: 3.4rem;
             }
-
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .process-steps {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .testimonial-grid {
                 grid-template-columns: 1fr 1fr;
             }
-
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-
             .case-grid {
                 grid-template-columns: 1fr;
             }
-
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 30px;
@@ -1010,65 +1040,61 @@
             .container {
                 padding: 0 20px;
             }
-
             .nav-links {
                 display: none;
             }
-
+            .hamburger {
+                display: flex;
+            }
             .hero h1 {
                 font-size: 2.6rem;
             }
-
             .hero-stats {
                 gap: 30px;
                 flex-wrap: wrap;
             }
-
             .hero-stats .stat h3 {
                 font-size: 1.8rem;
             }
-
             .section-title {
                 font-size: 2.2rem;
             }
-
             .services-grid {
                 grid-template-columns: 1fr;
             }
-
             .process-steps {
                 grid-template-columns: 1fr;
             }
-
             .testimonial-grid {
                 grid-template-columns: 1fr;
             }
-
             .cta-section {
                 padding: 50px 30px;
             }
-
             .cta-section h2 {
                 font-size: 2rem;
             }
-
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-
             .footer-bottom {
                 flex-direction: column;
                 gap: 16px;
                 text-align: center;
             }
-
             .hero-visual .floating-badge {
                 display: none;
             }
-
             .contact-info p {
                 max-width: 100%;
+            }
+            .whatsapp-float {
+                width: 56px;
+                height: 56px;
+                font-size: 2rem;
+                bottom: 20px;
+                right: 20px;
             }
         }
 
@@ -1078,7 +1104,6 @@
         .text-center {
             text-align: center;
         }
-
         .mx-auto {
             margin-left: auto;
             margin-right: auto;
@@ -1086,6 +1111,17 @@
     </style>
 </head>
 <body>
+
+    <!-- ============================================
+    MOBILE MENU (Overlay)
+    ============================================ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#services" onclick="closeMenu()">Services</a>
+        <a href="#work" onclick="closeMenu()">Work</a>
+        <a href="#process" onclick="closeMenu()">Process</a>
+        <a href="#testimonials" onclick="closeMenu()">Clients</a>
+        <a href="#contact" onclick="closeMenu()" class="btn-primary" style="font-size:1rem;">Start</a>
+    </div>
 
     <!-- ============================================
     HEADER
@@ -1105,14 +1141,26 @@
                     <i class="fas fa-arrow-right"></i> Start
                 </a>
             </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
+    <!-- ============================================
+    FLOATING WHATSAPP BUTTON
+    ============================================ -->
+    <a href="https://wa.me/923009215104" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- ============================================
     HERO
     ============================================ -->
     <section class="container hero" id="home">
-        <div class="hero-left">
+        <div class="hero-left fade-up">
             <div class="hero-badge">
                 <span class="dot"></span>
                 Now serving restaurants
@@ -1149,7 +1197,7 @@
                 </div>
             </div>
         </div>
-        <div class="hero-visual">
+        <div class="hero-visual fade-up fade-up-d2">
             <div class="card">
                 <div class="icon-wrap">
                     <i class="fas fa-wrench"></i>
@@ -1176,7 +1224,7 @@
     <!-- ============================================
     TRUST STRIP
     ============================================ -->
-    <div class="trust-strip">
+    <div class="trust-strip fade-up">
         <div class="container">
             <p>Trusted by restaurants across Pakistan</p>
             <div class="trust-logos">
@@ -1193,50 +1241,50 @@
     SERVICES
     ============================================ -->
     <section class="container section-padding" id="services">
-        <span class="section-label">What We Do</span>
-        <h2 class="section-title">
+        <span class="section-label fade-up">What We Do</span>
+        <h2 class="section-title fade-up">
             We fix what's <span class="highlight">holding you back.</span>
         </h2>
-        <p class="section-desc">
+        <p class="section-desc fade-up">
             From digital marketing to operational workflow — we handle the problems that quietly cost you money.
         </p>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card fade-up fade-up-d1">
                 <span class="number">01</span>
                 <span class="icon"><i class="fas fa-bullhorn"></i></span>
                 <h3>Digital Marketing</h3>
                 <p>Social media, branding, paid ads — we build visibility and drive revenue.</p>
                 <span class="link">Learn more <i class="fas fa-arrow-right"></i></span>
             </div>
-            <div class="service-card">
+            <div class="service-card fade-up fade-up-d2">
                 <span class="number">02</span>
                 <span class="icon"><i class="fas fa-gears"></i></span>
                 <h3>Operational Fixes</h3>
                 <p>Workflow gaps, service breakdowns, inventory leaks — we find and fix them.</p>
                 <span class="link">Learn more <i class="fas fa-arrow-right"></i></span>
             </div>
-            <div class="service-card">
+            <div class="service-card fade-up fade-up-d3">
                 <span class="number">03</span>
                 <span class="icon"><i class="fas fa-utensils"></i></span>
                 <h3>Restaurant Strategy</h3>
                 <p>We understand kitchens, front-of-house, and the unique economics of food.</p>
                 <span class="link">Learn more <i class="fas fa-arrow-right"></i></span>
             </div>
-            <div class="service-card">
+            <div class="service-card fade-up fade-up-d4">
                 <span class="number">04</span>
                 <span class="icon"><i class="fas fa-chart-line"></i></span>
                 <h3>Growth &amp; Scale</h3>
                 <p>Data-backed strategies to double down on what works and cut what doesn't.</p>
                 <span class="link">Learn more <i class="fas fa-arrow-right"></i></span>
             </div>
-            <div class="service-card">
+            <div class="service-card fade-up fade-up-d5">
                 <span class="number">05</span>
                 <span class="icon"><i class="fas fa-paint-brush"></i></span>
                 <h3>Brand &amp; Identity</h3>
                 <p>Positioning, visual identity, and messaging that cuts through the noise.</p>
                 <span class="link">Learn more <i class="fas fa-arrow-right"></i></span>
             </div>
-            <div class="service-card">
+            <div class="service-card fade-up fade-up-d6">
                 <span class="number">06</span>
                 <span class="icon"><i class="fas fa-code"></i></span>
                 <h3>Digital Infrastructure</h3>
@@ -1251,7 +1299,7 @@
     ============================================ -->
     <section class="container section-padding" id="about">
         <div class="about-grid">
-            <div class="about-content">
+            <div class="about-content fade-up">
                 <span class="section-label">About</span>
                 <div class="big-number">F</div>
                 <h2>We're not another <span class="highlight">agency.</span><br />We're your fix.</h2>
@@ -1271,7 +1319,7 @@
                     <div class="feature"><i class="fas fa-check"></i> Based in Lahore — serving Pakistan</div>
                 </div>
             </div>
-            <div class="about-visual">
+            <div class="about-visual fade-up fade-up-d2">
                 <div class="big-icon"><i class="fas fa-building"></i></div>
                 <h4>Fixwyn</h4>
                 <p>Strategic Agency for Restaurants</p>
@@ -1289,28 +1337,28 @@
     PROCESS
     ============================================ -->
     <section class="container section-padding" id="process">
-        <span class="section-label">How We Work</span>
-        <h2 class="section-title">
+        <span class="section-label fade-up">How We Work</span>
+        <h2 class="section-title fade-up">
             From diagnosis to <span class="highlight">results.</span>
         </h2>
-        <p class="section-desc">Our process is designed for speed, clarity, and real impact.</p>
+        <p class="section-desc fade-up">Our process is designed for speed, clarity, and real impact.</p>
         <div class="process-steps">
-            <div class="process-step">
+            <div class="process-step fade-up fade-up-d1">
                 <div class="step-num">1</div>
                 <h4>Diagnose</h4>
                 <p>We walk in and identify what's broken — operations, marketing, or both.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step fade-up fade-up-d2">
                 <div class="step-num">2</div>
                 <h4>Strategize</h4>
                 <p>We build a clear, actionable plan tailored to your specific business.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step fade-up fade-up-d3">
                 <div class="step-num">3</div>
                 <h4>Fix</h4>
                 <p>We execute — hands-on, no theory — fixing what's broken.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step fade-up fade-up-d4">
                 <div class="step-num">4</div>
                 <h4>Grow</h4>
                 <p>We optimize, scale, and make sure the fixes stick.</p>
@@ -1322,31 +1370,31 @@
     CASE STUDIES
     ============================================ -->
     <section class="container section-padding" id="work">
-        <span class="section-label">Recent Work</span>
-        <h2 class="section-title">
+        <span class="section-label fade-up">Recent Work</span>
+        <h2 class="section-title fade-up">
             Real results for <span class="highlight">real restaurants.</span>
         </h2>
-        <p class="section-desc">Case studies from businesses we've helped fix and grow.</p>
+        <p class="section-desc fade-up">Case studies from businesses we've helped fix and grow.</p>
         <div class="case-grid">
-            <div class="case-card">
+            <div class="case-card fade-up fade-up-d1">
                 <span class="tag">Restaurant</span>
                 <h4>Bistro 21</h4>
                 <p>Complete operational turnaround + social media overhaul.</p>
                 <div class="result">📈 Revenue up 43% in 90 days</div>
             </div>
-            <div class="case-card">
+            <div class="case-card fade-up fade-up-d2">
                 <span class="tag">Branding</span>
                 <h4>Spice House</h4>
                 <p>Brand repositioning, new website, and digital strategy.</p>
                 <div class="result">📈 Orders increased 67%</div>
             </div>
-            <div class="case-card">
+            <div class="case-card fade-up fade-up-d3">
                 <span class="tag">Operations</span>
                 <h4>DineIn Co.</h4>
                 <p>Workflow optimization and staff training program.</p>
                 <div class="result">📈 Customer satisfaction +28%</div>
             </div>
-            <div class="case-card">
+            <div class="case-card fade-up fade-up-d4">
                 <span class="tag">Digital</span>
                 <h4>QuickBite</h4>
                 <p>Online ordering system + marketing funnel setup.</p>
@@ -1359,25 +1407,25 @@
     TESTIMONIALS
     ============================================ -->
     <section class="container section-padding" id="testimonials">
-        <span class="section-label">Testimonials</span>
-        <h2 class="section-title">
+        <span class="section-label fade-up">Testimonials</span>
+        <h2 class="section-title fade-up">
             What our <span class="highlight">clients</span> say.
         </h2>
-        <p class="section-desc">Real feedback from real business owners.</p>
+        <p class="section-desc fade-up">Real feedback from real business owners.</p>
         <div class="testimonial-grid">
-            <div class="testimonial-card">
+            <div class="testimonial-card fade-up fade-up-d1">
                 <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                 <blockquote>"Fixwyn walked into my restaurant and fixed things I didn't even know were broken. My revenue is up 40% in just 2 months."</blockquote>
                 <div class="author">— Ahmed R.</div>
                 <div class="role">Restaurant Owner, Lahore</div>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card fade-up fade-up-d2">
                 <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                 <blockquote>"Finally an agency that actually understands both operations AND digital. Fixwyn is a game-changer for the industry."</blockquote>
                 <div class="author">— Sana K.</div>
                 <div class="role">Cafe Owner, Islamabad</div>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card fade-up fade-up-d3">
                 <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                 <blockquote>"Our social media grew 300% and our kitchen workflow improved dramatically. Fixwyn doesn't just talk — they deliver."</blockquote>
                 <div class="author">— Usman T.</div>
@@ -1389,7 +1437,7 @@
     <!-- ============================================
     CTA SECTION
     ============================================ -->
-    <section class="container">
+    <section class="container fade-up">
         <div class="cta-section">
             <h2>Ready to fix your business?</h2>
             <p>Let's diagnose your restaurant and build a plan that actually works.</p>
@@ -1400,16 +1448,16 @@
     </section>
 
     <!-- ============================================
-    CONTACT
+    CONTACT (WITH NETLIFY FORM)
     ============================================ -->
     <section class="container section-padding" id="contact">
-        <span class="section-label">Contact</span>
-        <h2 class="section-title">
+        <span class="section-label fade-up">Contact</span>
+        <h2 class="section-title fade-up">
             Let's <span class="highlight">talk.</span>
         </h2>
-        <p class="section-desc">We'll respond within 24 hours. No pressure, just solutions.</p>
+        <p class="section-desc fade-up">We'll respond within 24 hours. No pressure, just solutions.</p>
         <div class="contact-grid">
-            <div class="contact-info">
+            <div class="contact-info fade-up">
                 <h3>Get in touch</h3>
                 <p>Whether you need a quick fix or a full transformation — we're here to help.</p>
                 <div class="contact-details">
@@ -1431,15 +1479,22 @@
                     </div>
                 </div>
             </div>
-            <div class="contact-form">
-                <form>
-                    <input type="text" placeholder="Full name" />
-                    <input type="email" placeholder="Email address" />
-                    <input type="tel" placeholder="Phone number" />
-                    <textarea placeholder="Tell us about your business..."></textarea>
-                    <button class="btn-primary">
+            <div class="contact-form fade-up fade-up-d2">
+                <!-- NETLIFY FORM: Working form -->
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="submitForm(event)">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p style="display:none;"><label>Don't fill this if you're human: <input name="bot-field" /></label></p>
+
+                    <input type="text" name="name" placeholder="Full name" required />
+                    <input type="email" name="email" placeholder="Email address" required />
+                    <input type="tel" name="phone" placeholder="Phone number" />
+                    <textarea name="message" placeholder="Tell us about your business..." required></textarea>
+                    <button type="submit" class="btn-primary">
                         <i class="fas fa-arrow-right"></i> Send Message
                     </button>
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-check-circle"></i> &nbsp; Thank you! Your message has been sent. We'll get back to you within 24 hours.
+                    </div>
                 </form>
             </div>
         </div>
@@ -1476,21 +1531,77 @@
                     <h4>Connect</h4>
                     <a href="https://wa.me/923009215104" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     <a href="https://web.facebook.com/fixwyn/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <span>&copy; 2026 Fixwyn — Built with <i class="fas fa-heart" style="color:var(--orange);"></i> in Lahore</span>
                 <div class="footer-socials">
-                    <a href="https://web.facebook.com/fixwyn/" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://wa.me/923009215104" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://web.facebook.com/fixwyn/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://wa.me/923009215104" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- ============================================
+    JAVASCRIPT
+    ============================================ -->
+    <script>
+        // ----- Hamburger Menu Toggle -----
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : 'auto';
+        });
+
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close menu on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMenu();
+            }
+        });
+
+        // ----- Contact Form Submission (Netlify + Success Message) -----
+        function submitForm(e) {
+            e.preventDefault(); // Stop default submission to show success message
+
+            const form = e.target;
+            const successDiv = document.getElementById('formSuccess');
+
+            // Submit to Netlify using fetch
+            const formData = new FormData(form);
+
+            fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(() => {
+                    // Show success message
+                    successDiv.style.display = 'block';
+                    form.reset(); // Clear fields
+                    // Hide success after 6 seconds
+                    setTimeout(() => {
+                        successDiv.style.display = 'none';
+                    }, 6000);
+                })
+                .catch(error => {
+                    alert('Oops! Something went wrong. Please try again or contact us directly on WhatsApp.');
+                    console.error('Form submission error:', error);
+                });
+
+            return false;
+        }
+    </script>
 
 </body>
 </html>
