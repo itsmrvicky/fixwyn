@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Fixwyn - Fix. Grow. Succeed.</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ----- BUTTONS ----- */
+        .btn-primary {
+            background: #f97316; /* Orange */
+            color: #000;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #ff8c3a;
+            transform: scale(1.03);
+            box-shadow: 0 12px 28px rgba(249, 115, 22, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #f97316;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            border: 2px solid #f97316;
+            transition: 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: #f97316;
+            color: #000;
+        }
+
+        /* ----- HEADER / NAV ----- */
+        header {
+            padding: 22px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #f97316;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f97316;
+        }
+
+        /* ----- HERO ----- */
+        .hero {
+            padding: 80px 0 60px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1 1 400px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 span {
+            color: #f97316;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #bbbbbb;
+            margin: 24px 0 32px;
+            max-width: 550px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .hero-image {
+            flex: 1 1 300px;
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            padding: 40px 30px;
+            border-radius: 30px;
+            border: 1px solid #2a2a2a;
+            text-align: center;
+        }
+
+        .hero-image i {
+            font-size: 4rem;
+            color: #f97316;
+            margin-bottom: 16px;
+        }
+
+        .hero-image h3 {
+            font-size: 1.8rem;
+        }
+
+        /* ----- SERVICES (What we do) ----- */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 60px 0 20px;
+        }
+
+        .section-title span {
+            color: #f97316;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 30px 0 20px;
+        }
+
+        .service-card {
+            background: #141414;
+            padding: 30px 22px;
+            border-radius: 24px;
+            border: 1px solid #252525;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: #f97316;
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(249, 115, 22, 0.08);
+        }
+
+        .service-card i {
+            font-size: 2.4rem;
+            color: #f97316;
+            margin-bottom: 16px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+        }
+
+        /* ----- ABOUT / FIXWYN SHORT ----- */
+        .about-box {
+            background: #141414;
+            padding: 40px 36px;
+            border-radius: 30px;
+            border-left: 6px solid #f97316;
+            margin: 30px 0 20px;
+        }
+
+        .about-box p {
+            font-size: 1.15rem;
+            color: #d0d0d0;
+            max-width: 800px;
+        }
+
+        /* ----- CONTACT / CTA ----- */
+        .contact-section {
+            background: #0f0f0f;
+            padding: 50px 30px;
+            border-radius: 40px;
+            margin: 50px 0 30px;
+            border: 1px solid #2a2a2a;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+        }
+
+        .contact-section h2 span {
+            color: #f97316;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0 20px;
+            font-size: 1.2rem;
+        }
+
+        .contact-details div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-details i {
+            color: #f97316;
+            font-size: 1.6rem;
+        }
+
+        .contact-details a {
+            color: #fff;
+            border-bottom: 1px dashed #444;
+        }
+
+        .contact-details a:hover {
+            color: #f97316;
+            border-color: #f97316;
+        }
+
+        /* ----- FOOTER ----- */
+        footer {
+            text-align: center;
+            padding: 30px 0 20px;
+            border-top: 1px solid #1f1f1f;
+            color: #777;
+            font-size: 0.95rem;
+        }
+
+        footer span {
+            color: #f97316;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 700px) {
+            .hero-text h1 {
+                font-size: 2.4rem;
+            }
+            .nav-links {
+                gap: 18px;
+                font-size: 0.95rem;
+            }
+            .logo {
+                font-size: 1.6rem;
+            }
+            .contact-details {
+                flex-direction: column;
+                gap: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav">
+            <div class="logo">Fix<span>wyn</span></div>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="container hero">
+        <div class="hero-text">
+            <h1>Fix what’s broken.<br /><span>Grow what’s working.</span></h1>
+            <p>
+                Fixwyn helps restaurants & businesses fix real problems — operations, 
+                marketing, branding, and online presence. No fluff. Just results.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary"><i class="fas fa-phone-alt"></i> &nbsp;Let’s Talk</a>
+                <a href="#services" class="btn-outline">Our Services</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <i class="fas fa-wrench"></i>
+            <h3>Fixwyn</h3>
+            <p style="color:#aaa; margin-top:6px;">Lahore, Pakistan</p>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <div class="container" id="services">
+        <h2 class="section-title">What We <span>Fix</span></h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Digital Marketing</h3>
+                <p>Social media, branding, online presence — we get your name out there.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-gears"></i>
+                <h3>Operational Fixes</h3>
+                <p>Workflow issues, service gaps, day-to-day problems that cost you money.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-utensils"></i>
+                <h3>Restaurant Focus</h3>
+                <p>Currently serving restaurants. We understand your kitchen & front-of-house.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Growth Strategy</h3>
+                <p>Diagnose the real issue, fix it, and scale what’s already working.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="container" id="about">
+        <h2 class="section-title">About <span>Fixwyn</span></h2>
+        <div class="about-box">
+            <p>
+                <strong>Fixwyn</strong> helps restaurants and businesses fix what's broken and grow what's working. 
+                We handle digital marketing — social media, branding, and online presence — alongside 
+                hands-on operational fixes: workflow issues, service gaps, and the day-to-day problems 
+                that quietly cost you money. <strong>No theory, no fluff</strong> — we walk in, diagnose the real issue, 
+                and fix it. <br /><br />
+                <span style="color:#f97316;">📍 Currently serving restaurants.</span> Expanding to other businesses soon.
+            </p>
+        </div>
+    </div>
+
+    <!-- CONTACT / CTA -->
+    <div class="container" id="contact">
+        <div class="contact-section">
+            <h2>Let’s <span>Fix</span> It Together</h2>
+            <p style="color:#bbb; margin-top:10px; font-size:1.1rem;">
+                Reach out — we’ll diagnose your business and get you back on track.
+            </p>
+            <div class="contact-details">
+                <div>
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/923009215104" target="_blank">+92 300 9215104</a>
+                </div>
+                <div>
+                    <i class="fab fa-facebook"></i>
+                    <a href="https://web.facebook.com/fixwyn/" target="_blank">facebook.com/fixwyn</a>
+                </div>
+                <div>
+                    <i class="fas fa-map-pin"></i>
+                    <span>Lahore, Pakistan</span>
+                </div>
+            </div>
+            <a href="https://wa.me/923009215104" target="_blank" class="btn-primary" style="margin-top:18px;">
+                <i class="fab fa-whatsapp"></i> &nbsp;Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p>&copy; 2026 <span>Fixwyn</span> — Fix. Grow. Succeed.</p>
+        <p style="font-size:0.8rem; margin-top:6px;">Lahore, Pakistan</p>
+    </footer>
+
+</body>
+</html>
