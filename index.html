@@ -266,7 +266,8 @@
                    HERO
                 ======================================== */
         .hero {
-            padding: 150px 0 100px;
+            padding-top: 150px;
+            padding-bottom: 100px;
             display: grid;
             grid-template-columns: 1fr 0.9fr;
             gap: 80px;
@@ -1067,7 +1068,8 @@
             .hero {
                 grid-template-columns: 1fr;
                 gap: 50px;
-                padding: 120px 0 60px;
+                padding-top: 120px;
+                padding-bottom: 60px;
             }
             .hero h1 {
                 font-size: 3.4rem;
@@ -1156,6 +1158,19 @@
                 font-size: 2rem;
                 bottom: 20px;
                 right: 20px;
+            }
+            /* Reasserted after .container's shorthand above, which was
+               silently zeroing out .hero's top/bottom padding on mobile
+               and causing the fixed header to overlap the heading. */
+            .hero {
+                padding-top: 110px;
+                padding-bottom: 50px;
+            }
+            .founder-note {
+                padding: 32px 24px;
+            }
+            .case-card {
+                padding: 28px 22px;
             }
         }
 
